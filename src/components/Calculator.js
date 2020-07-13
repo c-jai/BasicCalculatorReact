@@ -24,15 +24,22 @@ export default class calculator extends React.Component {
 		this.state = { display: "" };
 
 		this.handleClick = this.handleClick.bind(this);
+		this.precision = 3;
 	}
 
 	handleClick(value) {
 		if (value === "del") this.setState({ display: "" });
 		else if (value === "=") {
 			let expression = encodeURIComponent(this.state.display);
-			fetch("http://api.mathjs.org/v4/?expr=" + expression)
+			fetch(
+				"https://api.mathjs.org/v4/?expr=" +
+					expression +
+					"&precision=" +
+					this.precision
+			)
 				.then((response) => response.json())
-				.then((body) => this.setState({ display: body }));
+				.then((body) => this.setState({ display: body }))
+				.catch((error) => console.log(error));
 		} else this.setState({ display: this.state.display + value });
 	}
 	render() {
