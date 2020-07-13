@@ -1,1 +1,1 @@
-Basic Calculator app can perform addition, subtraction, multiplication and division operations. Results are precise upto 3 places after decimal. I have used the [MathJS API] https://api.mathjs.org/#get for fecthing the result. 
+Basic Calculator app can perform addition, subtraction, multiplication and division operations. Results are precise upto 3 places after decimal. I have used the MathJS API[https://api.mathjs.org/#get] for fecthing the result. 
